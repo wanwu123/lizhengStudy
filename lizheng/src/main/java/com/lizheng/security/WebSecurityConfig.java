@@ -19,7 +19,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @Configuration
-//@EnableWebSecurity springboot可以不用配置
+//@EnableWebSecurity //springboot可以不用配置
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {

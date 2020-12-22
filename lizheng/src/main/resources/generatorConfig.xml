@@ -89,7 +89,7 @@
 <!--        <javaClientGenerator type="XMLMAPPER" targetPackage="com.lenovo.ofp.purchase.admin.soa.dao.mapper" targetProject="./src/main/java">-->
 <!--            <property name="enableSubPackages" value="true"/>-->
 <!--        </javaClientGenerator>-->
-<!--        <table tableName="payment_profile" domainObjectName="PaymentProfile"-->
+<!--        <table tableName="xxx" domainObjectName="xxx"-->
 <!--               enableCountByExample="true"-->
 <!--               enableDeleteByExample="true"-->
 <!--               enableSelectByExample="true"-->

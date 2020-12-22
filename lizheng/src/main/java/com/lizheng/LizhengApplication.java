@@ -3,7 +3,7 @@ package com.lizheng;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+//@SpringBootApplication
 public class LizhengApplication {
 
 	public static void main(String[] args) {
