@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lizheng.mapper.db1.UserMapper" >
+
+    <select id="selectUser" resultType="com.lizheng.bean.po.User">
+        select * from user where id = #{id}
+    </select>
+  <select id="selectAllUser" resultType="com.lizheng.bean.po.User">
+        select id,name from user
+  </select>
+  <select id="selectUserByName" resultType="com.lizheng.bean.po.User">
+        select id,name
+        from user
+        where  name = #{userName}
+        limit 0,1
+  </select>
+    <select id="getUser" resultType="com.lizheng.bean.po.User">
+        select * from user where id = %s
+    </select>
+
+
+</mapper>

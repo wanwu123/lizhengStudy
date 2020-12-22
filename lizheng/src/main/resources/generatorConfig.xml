@@ -1,0 +1,104 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<!DOCTYPE generatorConfiguration-->
+<!--        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"-->
+<!--        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">-->
+
+<!--<generatorConfiguration>-->
+<!--    &lt;!&ndash;执行generator插件生成文件的命令： call mvn mybatis-generator:generate &ndash;&gt;-->
+<!--    &lt;!&ndash; 引入配置文件 &ndash;&gt;-->
+<!--    &lt;!&ndash;<properties resource="mybatis-generator/mybatisGeneratorinit.properties"/>&ndash;&gt;-->
+<!--    &lt;!&ndash;classPathEntry:数据库的JDBC驱动,换成你自己的驱动位置 可选 &ndash;&gt;-->
+<!--    &lt;!&ndash;<properties resource="mybatis-generator/mybatisGeneratorinit.properties"/> &ndash;&gt;-->
+<!--    &lt;!&ndash;classPathEntry:数据库的JDBC驱动,换成你自己的驱动位置 可选&ndash;&gt;-->
+<!--    <classPathEntry-->
+<!--            location="C:\work\cool\mysql\mysql-connector-java\8.0.11\mysql-connector-java-8.0.11.jar"/>-->
+
+<!--    &lt;!&ndash; 一个数据库一个context &ndash;&gt;-->
+<!--    &lt;!&ndash;defaultModelType="flat" 大数据字段，不分表 &ndash;&gt;-->
+<!--    <context id="MysqlTables" targetRuntime="MyBatis3" defaultModelType="flat">-->
+
+<!--        <property name="javaFileEncoding" value="UTF-8"/>-->
+<!--        <property name="autoDelimitKeywords" value="true"/>-->
+<!--        &lt;!&ndash; beginningDelimiter和endingDelimiter：指明数据库的用于标记数据库对象名的符号，比如ORACLE就是双引号，MYSQL默认是`反引号； &ndash;&gt;-->
+<!--        <property name="beginningDelimiter" value="`"/>-->
+<!--        <property name="endingDelimiter" value="`"/>-->
+<!--        <property name="mergeable" value="false"></property>-->
+
+<!--        &lt;!&ndash; 格式化java代码 &ndash;&gt;-->
+<!--        <property name="javaFormatter" value="org.mybatis.generator.api.dom.DefaultJavaFormatter"/>-->
+<!--        &lt;!&ndash; 格式化XML代码 &ndash;&gt;-->
+<!--        <property name="xmlFormatter" value="org.mybatis.generator.api.dom.DefaultXmlFormatter"/>-->
+<!--        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>-->
+<!--        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>-->
+<!--        <plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin"/>-->
+<!--        &lt;!&ndash; MySQL分页插件 &ndash;&gt;-->
+<!--        <plugin type="com.itfsw.mybatis.generator.plugins.LimitPlugin">-->
+<!--            <property name="startPage" value="0"/>-->
+<!--        </plugin>-->
+<!--        <plugin type="com.itfsw.mybatis.generator.plugins.SelectOneByExamplePlugin"/>-->
+<!--        <plugin type="com.itfsw.mybatis.generator.plugins.LombokPlugin">-->
+<!--            <property name="@Data" value="true"/>-->
+<!--            <property name="@Builder" value="true"/>-->
+<!--            <property name="@NoArgsConstructor" value="true"/>-->
+<!--            <property name="@AllArgsConstructor" value="true"/>-->
+<!--        </plugin>-->
+<!--        <plugin type="com.itfsw.mybatis.generator.plugins.ModelColumnPlugin"/>-->
+<!--        <plugin type="com.itfsw.mybatis.generator.plugins.BatchInsertPlugin">-->
+<!--            <property name="allowMultiQueries" value="false"/>-->
+<!--        </plugin>-->
+<!--        &lt;!&ndash; 注释 &ndash;&gt;-->
+
+<!--        <commentGenerator>-->
+<!--            <property name="suppressAllComments" value="true"/>-->
+<!--            <property name="addRemarkComments" value="true"/>-->
+<!--        </commentGenerator>-->
+
+
+<!--        &lt;!&ndash;设置数据库连接驱动&ndash;&gt;-->
+<!--        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"-->
+<!--                        connectionURL="jdbc:mysql://localhost:3306/xxx?useSSL=false&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&serverTimezone=UTC&allowPublicKeyRetrieval=true"-->
+<!--                        userId="root"-->
+<!--                        password="123456">-->
+<!--            &lt;!&ndash;-->
+<!--                        <property name="useInformationSchema" value="true"/>-->
+<!--            &ndash;&gt;-->
+<!--            <property name="nullCatalogMeansCurrent" value="true"/>-->
+<!--            &lt;!&ndash;设置可以获取remarks信息&ndash;&gt;-->
+<!--            <property name="remarks" value="true"/>-->
+<!--        </jdbcConnection>-->
+
+<!--        &lt;!&ndash;当字段类型是 DECIMAL或者 NUMERIC时，是否强制转换为BigDecimal,否的话会自动根据规模的大小选择合适的类型  &ndash;&gt;-->
+<!--        <javaTypeResolver>-->
+<!--            <property name="forceBigDecimals" value="false"/>-->
+<!--            <property name="useJSR310Types" value="true"/>-->
+<!--        </javaTypeResolver>-->
+
+<!--        &lt;!&ndash; 生成模型的包名和位置&ndash;&gt;-->
+<!--        <javaModelGenerator targetPackage="com.lenovo.ofp.purchase.admin.soa.common.domain.model" targetProject="./src/main/java">-->
+<!--            <property name="enableSubPackages" value="true"/>-->
+<!--            <property name="trimStrings" value="true"/>-->
+<!--            <property name="" value=""/>-->
+<!--        </javaModelGenerator>-->
+
+<!--        &lt;!&ndash; 生成映射文件的包名和位置&ndash;&gt;-->
+<!--        <sqlMapGenerator targetPackage="mapper" targetProject="./src/main/resources/">-->
+<!--            <property name="enableSubPackages" value="true"/>-->
+<!--        </sqlMapGenerator>-->
+
+<!--        &lt;!&ndash; 生成DAO的包名和位置&ndash;&gt;-->
+<!--        <javaClientGenerator type="XMLMAPPER" targetPackage="com.lenovo.ofp.purchase.admin.soa.dao.mapper" targetProject="./src/main/java">-->
+<!--            <property name="enableSubPackages" value="true"/>-->
+<!--        </javaClientGenerator>-->
+<!--        <table tableName="payment_profile" domainObjectName="PaymentProfile"-->
+<!--               enableCountByExample="true"-->
+<!--               enableDeleteByExample="true"-->
+<!--               enableSelectByExample="true"-->
+<!--               enableUpdateByExample="true"-->
+<!--               enableDeleteByPrimaryKey="true"-->
+<!--               enableSelectByPrimaryKey="true"-->
+<!--               enableUpdateByPrimaryKey="true"-->
+<!--               enableInsert="true">-->
+<!--            <generatedKey column="id" sqlStatement="MySql" identity="true"/>-->
+<!--        </table>-->
+<!--    </context>-->
+<!--</generatorConfiguration>-->
