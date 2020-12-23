@@ -50,8 +50,7 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void up(long id) {
-            userInfoExtMapper.update(id);
-            int a = 1/0;
+        userInfoExtMapper.update(id);
     }
 
     @Override

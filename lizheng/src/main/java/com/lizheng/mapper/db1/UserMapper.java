@@ -3,6 +3,7 @@ package com.lizheng.mapper.db1;
 
 import com.lizheng.annotation.Select;
 import com.lizheng.bean.po.User;
+import com.lizheng.bean.result.UserTemplete;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
 
@@ -23,4 +24,6 @@ public interface UserMapper {
     String selectId(Long id);
 
     User getUser(@Param("id")Long id);
+
+    UserTemplete selectJoin();
 }

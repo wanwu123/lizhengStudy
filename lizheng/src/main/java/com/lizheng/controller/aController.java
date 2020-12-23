@@ -3,6 +3,7 @@ package com.lizheng.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.lizheng.annotation.TestAopAnnotation;
+import com.lizheng.bean.result.UserTemplete;
 import com.lizheng.config.bloomfilter.DistributedBloomFilter;
 import com.lizheng.config.redis.RedisUtil;
 import com.lizheng.constants.RedisConstants;
@@ -80,9 +81,19 @@ public class aController {
 
 
     @GetMapping("b")
-    public Object b()
+    public Object b(Long id)
     {
-        return 1;
+        long time = System.currentTimeMillis() + 3000L;
+        redisUtil.zadd("test",time,id.toString());
+        return id;
+    }
+
+
+    @GetMapping("n")
+    public Object n()
+    {
+        UserTemplete userTemplete = userMapper.selectJoin();
+        return userTemplete;
     }
 
     @GetMapping("/lizhengStart")
