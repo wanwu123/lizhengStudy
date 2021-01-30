@@ -6,10 +6,16 @@ import com.lizheng.config.redis.RedisUtil;
 import com.lizheng.constants.RedisConstants;
 import com.lizheng.mapper.db1.UserMapper;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.util.EntityUtils;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -31,6 +37,10 @@ public class UserBloomFilterData {
         redisUtil.updateBloom(RedisConstants.REDIS_USER_NAME,names);
         redisUtil.updateBloomId(RedisConstants.REDIS_USER_ID,ids);
         log.info("user:bloomfilter update end");
+    }
+
+    public static void main(String[] args) {
+        System.out.println(new BigDecimal(2).subtract(null));
     }
 
 }
